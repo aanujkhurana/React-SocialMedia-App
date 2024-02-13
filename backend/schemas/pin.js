@@ -34,10 +34,10 @@ export default {
         {
             name: 'postedBy',
             title: 'PostedBy',
-            type: 'string',
+            type: 'postedBy',
         },
         {
-            name: 'user',
+            name: 'userId',
             title: 'UserID',
             type: 'string',
         },
