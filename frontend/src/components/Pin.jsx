@@ -117,12 +117,22 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save, userId } }) => {
                                     >
                                         <AiTwotoneDelete />
                                     </button>
-                                
                                 )}
                         </div>
                     </div>
                 )}
             </div>
+            <Link
+            to={`/user-profile/${postedBy?._id}`}
+            className='flex gap-2 mt-2 items-center'
+            >
+                <img
+                src={postedBy?.image}
+                alt='user-pic'
+                className='w-8 h-8 rounded-full object-cover'
+                />
+                <p className='font-medium capitalize'>{postedBy?.userName}</p>
+            </Link>
         </div>
     )
 }
