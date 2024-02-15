@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import shareVideo from "../assets/share.mp4"
 import logo from "../assets/logo.png"
 
-import { GoogleLogin, googleLogout} from '@react-oauth/google';
+import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 
 import { client } from '../client';
@@ -14,7 +14,7 @@ const Login = () => {
     const decoded = jwtDecode(response.credential);
     console.log(decoded);
     localStorage.setItem('user', JSON.stringify(decoded));
-
+    console.log(decoded);
     const { name, sub, picture } = decoded;
 
     const doc = {
@@ -25,8 +25,8 @@ const Login = () => {
     }
 
     client.createIfNotExists(doc)
-      .then(() => {})
-      navigate('/',{replace: true});
+      .then(() => { })
+    navigate('/', { replace: true });
   }
 
   return (
@@ -42,19 +42,19 @@ const Login = () => {
           className="w-full h-full object-cover"
         />
         <div className='absolute flex flex-col justify-center items-center top-0 right-0 left-0 right-0 bottom-0'>
-        <div className='p-5'>
-          <img src={logo} alt="logo" width="130px" />
-        </div>
-        <div className='shadow-2xl'>
-        <GoogleLogin
-          onSuccess={credentialResponse => {
-            responseGoogle(credentialResponse);
-          }}
-          onError={() => {
-            console.log('Login Failed');
-          }}
-        />;
-        </div>
+          <div className='p-5'>
+            <img src={logo} alt="logo" width="130px" />
+          </div>
+          <div className='shadow-2xl'>
+            <GoogleLogin
+              onSuccess={credentialResponse => {
+                responseGoogle(credentialResponse);
+              }}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+            />;
+          </div>
         </div>
       </div>
     </div>
