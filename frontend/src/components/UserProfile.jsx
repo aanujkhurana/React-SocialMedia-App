@@ -8,6 +8,10 @@ import { client } from '../client'
 import Spinner from './Spinner'
 import MasoryLayout from './MasoryLayout'
 
+const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none';
+const inactiveBtnStyles = 'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none';
+
+
 const UserProfile = () => {
 
     const [user, setUser] = useState(null);
@@ -18,14 +22,14 @@ const UserProfile = () => {
     const navigate = useNavigate();
     const { userId } = useParams();
 
-    const randomImage = "https://source.unsplash.com/1600x900/?nature,photography,cats,people,travel,food,architecture,animals,technology"
+    const randomImage = "https://source.unsplash.com/1600x900/?nature,travel,food,architecture,animals,landscape,space,art,sky,beach,flowers"
 
     const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
 
     const logout = () => {
         googleLogout();
         localStorage.clear();
-        navigate('/');
+        navigate('/login');
     }
 
     useEffect(() => {
@@ -34,7 +38,24 @@ const UserProfile = () => {
         client.fetch(query).then((res) => {
             setUser(res[0]);
         });
-    }, [userId])
+    }, [userId]);
+
+    useEffect(() => {
+        if (text === 'Created') {
+            const createdPinsQuery = userCreatedPinsQuery(userId);
+
+            client.fetch(createdPinsQuery).then((data) => {
+                setPins(data);
+            });
+        } else {
+            const savedPinsQuery = userSavedPinsQuery(userId);
+
+            client.fetch(savedPinsQuery).then((data) => {
+                setPins(data);
+            });
+        }
+    }, [text, userId]);
+
 
     if (!userId) {
         return <Spinner message="Loading Profile....." />
@@ -70,6 +91,37 @@ const UserProfile = () => {
                             )}
                         </div>
                         <div>
+                            <div className="text-center mb-7">
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        setText(e.target.textContent);
+                                        setActiveBtn("created");
+                                    }}
+                                    className={`${activeBtn === "created" ? activeBtnStyles : inactiveBtnStyles}`}
+                                >
+                                    Created
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        setText(e.target.textContent);
+                                        setActiveBtn('saved');
+                                    }}
+                                    className={`${activeBtn === 'saved' ? activeBtnStyles : inactiveBtnStyles}`}
+                                >
+                                    Saved
+                                </button>
+                            </div>
+                            {pins?.length ? (
+                                <div className="px-2">
+                                    <MasoryLayout pins={pins} />
+                                </div>
+                            ) : (
+                                <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
+                                    No Pins Found!
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
