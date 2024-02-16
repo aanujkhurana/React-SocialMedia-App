@@ -9,15 +9,15 @@ import { feedQuery, searchQuery } from '../utils/data.js';
 const Feed = () => {
 
   const [Loading, setLoading] = useState(false)
-  
+
   const [pins, setPins] = useState();
-  
-  const { categoryID }  = useParams();
-  
+
+  const { categoryId } = useParams();
+
   useEffect(() => {
     setLoading(true);
-    if(categoryID) {
-      const query = searchQuery(categoryID);
+    if (categoryId) {
+      const query = searchQuery(categoryId);
       client.fetch(query).then((data) => {
         setPins(data);
         setLoading(false);
@@ -25,14 +25,15 @@ const Feed = () => {
     }
     else {
       client.fetch(feedQuery)
-      .then((data) => {
-        setPins(data);
-        setLoading(false);
-      });
+        .then((data) => {
+          setPins(data);
+          setLoading(false);
+        });
     }
-  }, [categoryID]);
-  
-  if (Loading) return <Spinner message="We're adding new {Items} to your feed...."/>
+  }, [categoryId]);
+
+  if (Loading) return <Spinner message="We're adding new {Items} to your feed...." />
+  if (!pins?.length) return <h2>No Pins Available!</h2>
   return (
     <div>
       {pins && (<MasonryLayout pins={pins} />)}

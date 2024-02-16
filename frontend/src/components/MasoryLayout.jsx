@@ -1,5 +1,5 @@
 import React from 'react';
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Pin from './Pin'
 
@@ -7,14 +7,16 @@ import Pin from './Pin'
 const MasoryLayout = ({ pins }) => {
     return (
         <ResponsiveMasonry
-            columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
+            columnsCountBreakPoints={{ 150: 1, 250: 2, 400: 3, 750: 4, 900: 6 }}
         >
             <Masonry className="flex animate-slide-fwd">
-            {pins?.map((pin) => (
-                <div key={pin._id} className="w-max">
-                <Pin pin={pin} />
-                </div>
-            ))}
+                <>
+                    {pins?.map((pin) => (
+                        <div key={pin._id} className="w-max">
+                            <Pin pin={pin} />
+                        </div>
+                    ))}
+                </>
             </Masonry>
         </ResponsiveMasonry>
     )
