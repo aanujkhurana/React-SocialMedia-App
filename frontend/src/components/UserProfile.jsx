@@ -40,7 +40,7 @@ const UserProfile = () => {
     }, [userId]);
 
     useEffect(() => {
-        if (text !== 'created') {
+        if (text === 'created') {
             const createdPinsQuery = userCreatedPinsQuery(userId);
             client.fetch(createdPinsQuery).then((data) => {
                 setPins(data);
@@ -87,45 +87,43 @@ const UserProfile = () => {
                                 </button>
                             )}
                         </div>
-                        <div>
-                            <div className="text-center mb-7">
-                                <button
-                                    type="button"
-                                    onClick={(e) => {
-                                        setText(e.target.textContent);
-                                        setActiveBtn("created");
-                                    }}
-                                    className={`${activeBtn === "created" ? activeBtnStyles : inactiveBtnStyles}`}
-                                >
-                                    Created
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={(e) => {
-                                        setText(e.target.textContent);
-                                        setActiveBtn('saved');
-                                    }}
-                                    className={`${activeBtn === 'saved' ? activeBtnStyles : inactiveBtnStyles}`}
-                                >
-                                    Saved
-                                </button>
-                            </div>
-                            {pins?.length ? (
-                                <div className="px-2">
-                                    <MasoryLayout pins={pins} />
-                                </div>
-                            ) : (
-                                <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
-                                    No Pins Found!
-                                </div>
-                            )}
-                        </div>
                     </div>
+                    <div className="text-center mb-7">
+                        <button
+                            type="button"
+                            onClick={(e) => {
+                                setText(e.target.textContent);
+                                setActiveBtn('created');
+                            }}
+                            className={`${activeBtn === 'created' ? activeBtnStyles : inactiveBtnStyles}`}
+                        >
+                            Created
+                        </button>
+                        <button
+                            type="button"
+                            onClick={(e) => {
+                                setText(e.target.textContent);
+                                setActiveBtn('saved');
+                            }}
+                            className={`${activeBtn === 'saved' ? activeBtnStyles : inactiveBtnStyles}`}
+                        >
+                            Saved
+                        </button>
+                    </div>
+
+                    <div className="px-2">
+                        <MasoryLayout pins={pins} />
+                    </div>
+
+                    {pins?.length === 0 && (
+                        <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
+                            No Pins Found!
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
     )
-
 }
 
 export default UserProfile
