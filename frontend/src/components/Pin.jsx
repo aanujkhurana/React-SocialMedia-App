@@ -15,7 +15,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save, userId } }) => {
     const user = fetchUser();
     const navigate = useNavigate();
 
-    const alreadySaved = !!(save?.filter((item) => item.userId === user._id))?.length;
+    const alreadySaved = !!(save?.filter((item) => item.userId === user?._id))?.length;
 
     const savePin = (id) => {
         if (!alreadySaved) {
@@ -106,7 +106,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save, userId } }) => {
                                     {destination.slice(11, 28)}
                                 </a>
                             )}
-                            {userId === user._id && (
+                            {userId === user?._id && (
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
