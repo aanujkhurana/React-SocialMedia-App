@@ -8,6 +8,8 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 import { fetchUser } from './utils/fetchUser';
 
+const googleApiKey = import.meta.env.VITE_GOOGLE_API_TOKEN
+
 function app() {
     const navigate = useNavigate();
 
@@ -20,7 +22,7 @@ function app() {
 
 
     return (
-        <GoogleOAuthProvider clientId='215360589423-fghv07s51jvji74m4uka7o1n424llo80.apps.googleusercontent.com'>
+        <GoogleOAuthProvider clientId={googleApiKey} >
             <Routes>
                 <Route path="Login" element={<Login />} />
                 <Route path="/*" element={<Home />} />

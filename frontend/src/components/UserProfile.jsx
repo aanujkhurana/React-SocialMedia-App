@@ -53,6 +53,10 @@ const UserProfile = () => {
         }
     }, [text, userId]);
 
+    // useEffect(() => {
+    //     window.location.reload(); // Reload the page whenever text changes
+    // }, [text]);
+
     if (!userId) {
         return <Spinner message="Loading Profile....." />
     }
@@ -93,6 +97,7 @@ const UserProfile = () => {
                             onClick={(e) => {
                                 setText(e.target.textContent);
                                 setActiveBtn('created');
+                                window.location.reload();
                             }}
                             className={`${activeBtn === 'created' ? activeBtnStyles : inactiveBtnStyles}`}
                         >

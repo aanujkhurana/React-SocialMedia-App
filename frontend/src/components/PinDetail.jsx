@@ -43,7 +43,7 @@ const PinDetail = ({ user }) => {
       client
         .patch(pinId)
         .setIfMissing({ comments: [] })
-        .insert('after', 'comments[-1]', [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user._id } }])
+        .insert('after', 'comments[-1]', [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user?._id } }])
         .commit()
         .then(() => {
           fetchPinDetails();
@@ -91,7 +91,7 @@ const PinDetail = ({ user }) => {
               </h1>
               <p className="mt-3">{pinDetail.about}</p>
             </div>
-            <Link to={`/user-profile/${pinDetail?.postedBy._id}`} className="flex gap-2 mt-5 items-center bg-white rounded-lg ">
+            <Link to={`/user-profile/${pinDetail?.postedBy?._id}`} className="flex gap-2 mt-5 items-center bg-white rounded-lg ">
               <img src={pinDetail?.postedBy.image} className="w-10 h-10 rounded-full" alt="user-profile" />
               <p className="font-bold">{pinDetail?.postedBy.userName}</p>
             </Link>
@@ -112,8 +112,8 @@ const PinDetail = ({ user }) => {
               ))}
             </div>
             <div className="flex flex-wrap mt-6 gap-3">
-              <Link to={`/user-profile/${user._id}`}>
-                <img src={user.image} className="w-10 h-10 rounded-full cursor-pointer" alt="user-profile" />
+              <Link to={`/user-profile/${user?._id}`}>
+                <img src={user?.image} className="w-10 h-10 rounded-full cursor-pointer" alt="user-profile" />
               </Link>
               <input
                 className=" flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300"
@@ -131,18 +131,20 @@ const PinDetail = ({ user }) => {
               </button>
             </div>
           </div>
-        </div>
+        </div >
       )}
-      {pins?.length > 0 ? (
-        <>
-          <h2 className="text-center font-bold text-2xl mt-8 mb-4">
-            More like this
-          </h2>
-          <MasoryLayout pins={pins} />
-        </>
-      ) : (
-        <Spinner message="Loading more pins" />
-      )}
+      {
+        pins?.length > 0 ? (
+          <>
+            <h2 className="text-center font-bold text-2xl mt-8 mb-4">
+              More like this
+            </h2>
+            <MasoryLayout pins={pins} />
+          </>
+        ) : (
+          <Spinner message="Loading more pins" />
+        )
+      }
     </>
   );
 };
