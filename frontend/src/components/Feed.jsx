@@ -32,7 +32,7 @@ const Feed = () => {
     }
   }, [categoryId]);
 
-  if (Loading) return <Spinner message="We're adding new {Items} to your feed...." />
+  if (Loading) return <Spinner message="We're adding pins to your feed...." />
   if (!pins?.length) return <h2>No Pins Available!</h2>
   return (
     <div>

@@ -168,7 +168,7 @@ export const userQuery = (userId) => {
 };
 
 export const userCreatedPinsQuery = (userId) => {
-  const query = `*[ _type == 'pin' && userId == '${userId}'] | order(_createdAt desc){
+  const query = `*[ _type == 'pin' && '${userId}' == postedBy._ref ] | order(_createdAt desc){
       image{
         asset->{
           url
@@ -177,6 +177,7 @@ export const userCreatedPinsQuery = (userId) => {
       _id,
       destination,
       postedBy->{
+        _ref,
         _id,
         userName,
         image

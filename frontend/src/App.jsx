@@ -20,12 +20,12 @@ function app() {
 
 
     return (
-        <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN} >
+        <GoogleOAuthProvider clientId='215360589423-fghv07s51jvji74m4uka7o1n424llo80.apps.googleusercontent.com'>
             <Routes>
                 <Route path="Login" element={<Login />} />
                 <Route path="/*" element={<Home />} />
             </Routes>
-        </GoogleOAuthProvider >
+        </GoogleOAuthProvider>
     )
 }
 

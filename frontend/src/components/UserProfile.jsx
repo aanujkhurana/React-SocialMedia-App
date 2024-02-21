@@ -53,7 +53,6 @@ const UserProfile = () => {
         }
     }, [text, userId]);
 
-
     if (!userId) {
         return <Spinner message="Loading Profile....." />
     }
