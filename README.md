@@ -1,5 +1,5 @@
-# React-SocialMedia-App
-Full-stack responsive social media web application, akin to Pinterest, offering users the ability to share images with associated links and engage through comments.
+# PIN BOARD-REACT-App
+Full-stack responsive social media web application, akin to Pinterest, offering users the ability to login using Google, Share and Download images with associated links and engage through Comments. 
 #### [click here to visit](https://pinsboard.netlify.app)
 
 <div align="left">
