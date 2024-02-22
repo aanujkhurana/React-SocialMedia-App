@@ -2,8 +2,9 @@
 Full-stack responsive social media web application, akin to Pinterest, offering users the ability to share images with associated links and engage through comments.
 #### [click here to visit](https://pinsboard.netlify.app)
 
-<div align="Center">
-    <img src="/screenshots/img3.png" width="800px"</img>
+<div align="left">
+    <img src="/screenshots/img4.png" width="400px"</img>
+    <img src="/screenshots/img3.png" width="400px"</img>
     <img src="/screenshots/img2.png" width="400px"</img>
     <img src="/screenshots/img1.png" width="400px"</img>
 </div>
