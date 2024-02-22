@@ -32,12 +32,17 @@ Make sure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/aanujkhurana/AI_ArticleSummary-React.git
+```
+```bash
 cd AI_ArticleSummary-React/
 ```
 
+
+### Frontend
+
 **Set Up Environment Variables**
 
-Create a new file named `.env` in the frontend folder of your project and add the following content:
+Create a new file named `.env` in the frontend folder of project and add the following content:
 
 ```env
 VITE_GOOGLE_API_TOKEN = 
@@ -47,13 +52,10 @@ VITE_SANITY_DATASET =
 ```
 
 Replace the placeholder values with  
-- Google-Auth-API KEY credentials. [Google-Auth website](https://rapidapi.com).
+- Google-Auth-API KEY credentials. [Google-Auth website](https://console.cloud.google.com/apis).
 - Sanity [https://www.sanity.io](https://www.sanity.io)
 
-
 **Running the Project**
-
-### Frontend
 
 ```bash
 cd frontend
