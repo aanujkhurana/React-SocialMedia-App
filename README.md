@@ -32,7 +32,7 @@ Make sure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/aanujkhurana/AI_ArticleSummary-React.git
-cd AI_ArticleSummary-React
+cd AI_ArticleSummary-React/
 ```
 
 **Set Up Environment Variables**
@@ -58,14 +58,9 @@ Replace the placeholder values with
 ```bash
 cd frontend
 ```
-**Installation**
-
-Install the project dependencies using npm:
-
 ```bash
 npm install
 ```
-
 ```bash
 npm run dev
 ```
@@ -76,14 +71,9 @@ Visit [http://localhost:5173](http://localhost:5173)
 ```bash
 cd frontend
 ```
-**Installation**
-
-Install the project dependencies using npm:
-
 ```bash
 npm install
 ```
-
 ```bash
 npm run dev
 ```
