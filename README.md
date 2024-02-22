@@ -1,4 +1,4 @@
-# PIN BOARD-REACT-App
+# PIN BOARD REACT-Web-App
 Full-stack responsive social media web application, akin to Pinterest, offering users the ability to login using Google, Share and Download images with associated links and engage through Comments. 
 #### [click here to visit](https://pinsboard.netlify.app)
 
