@@ -1,83 +1,72 @@
-# PIN BOARD REACT-Web-App
-Full-stack responsive social media web application, akin to Pinterest, offering users the ability to login using Google, Share and Download images with associated links and engage through Comments. 
-#### [click here to visit](https://pinsboard.netlify.app)
+# PIN BOARD: A Pinterest-like React Social Media App
 
-<div align="left">
-    <img src="/screenshots/img4.png" width="400px"</img>
-    <img src="/screenshots/img3.png" width="400px"</img>
-    <img src="/screenshots/img2.png" width="400px"</img>
-    <img src="/screenshots/img1.png" width="400px"</img>
-</div>
+Pin Board is a full-stack, responsive social media web application inspired by Pinterest. It allows users to:
 
+* Login using Google Authentication
+* Share and download images with links
+* Engage with other users through comments
+
+**Live Demo:** [Pin Board](https://pinsboard.netlify.app)
 
 ## Tech Stack
 
-- React (frontend)
-- Tailwind CSS
-- Sanity.io (backend)
-
+* Frontend: React
+* Styling: Tailwind CSS
+* Backend: Sanity.io
 
 ## Local Development
-Follow these steps to set up the project locally on your machine.
 
-**Prerequisites**
+Follow these steps to set up and run Pin Board on your machine.
 
-Make sure you have the following installed on your machine:
+**Prerequisites:**
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
+* Git (https://git-scm.com/downloads)
+* Node.js (https://nodejs.org/en)
+* npm (Node Package Manager) - Usually comes bundled with Node.js installation
 
-**Cloning the Repository**
+**Project Setup:**
 
-```bash
-git clone https://github.com/aanujkhurana/AI_ArticleSummary-React.git
-```
-```bash
-cd AI_ArticleSummary-React/
-```
+1. Clone the repository:
 
+   ```bash
+   git clone [invalid URL removed]
+   ```
 
-### Frontend
+   Replace `your-username` with your actual GitHub username.
+2. Navigate to the project directory:
 
-**Set Up Environment Variables**
+   ```bash
+   cd pin-board
+   ```
 
-Create a new file named `.env` in the frontend folder of project and add the following content:
+**Frontend Setup:**
 
-```env
-VITE_GOOGLE_API_TOKEN = 
-VITE_SANITY_PROJECT_ID = 
-VITE_SANITY_TOKEN =  
-VITE_SANITY_DATASET = 
-```
+1. **Environment Variables:**
 
-Replace the placeholder values with  
-- Google-Auth-API KEY credentials. [Google-Auth website](https://console.cloud.google.com/apis).
-- Sanity [https://www.sanity.io](https://www.sanity.io)
+   Create a file named `.env` in the `frontend` directory and add the following lines:
 
-**Running the Project**
+   ```
+   VITE_GOOGLE_API_TOKEN=YOUR_GOOGLE_AUTH_API_KEY
+   VITE_SANITY_PROJECT_ID=YOUR_SANITY_PROJECT_ID
+   VITE_SANITY_TOKEN=YOUR_SANITY_MANAGEMENT_TOKEN
+   VITE_SANITY_DATASET=YOUR_SANITY_DATASET
+   ```
 
-```bash
-cd frontend
-```
-```bash
-npm install
-```
-```bash
-npm run dev
-```
-Visit [http://localhost:5173](http://localhost:5173)
+   * Replace placeholders with your actual credentials:
+      * Get a Google Auth API key from https://console.cloud.google.com/
+      * Create a Sanity project and find your project ID, dataset, and a management token at https://www.sanity.io/pricing
 
-### Backend
+2. **Install Dependencies:**
 
-```bash
-cd frontend
-```
-```bash
-npm install
-```
-```bash
-npm run dev
-```
-Visit [http://localhost:3333](http://localhost:3333)
+   ```bash
+   cd frontend
+   npm install
+   ```
 
+3. **Run the Development Server:**
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the development server at http://localhost:5173. Open this URL in your browser to view the application.
