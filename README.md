@@ -2,16 +2,22 @@
 
 Welcome to PIN BOARD, a full-stack responsive social media web application similar to Pinterest. PIN BOARD allows users to log in using Google, share and download images with associated links, and engage through comments.
 
+## Index
+- [Live Demo](#live-demo)
+- [Tech Stack](#tech-stack)
+- [Local Development](#local-development)
+  - [Frontend](#frontend)
+  - [Backend](#backend)
+- [Screenshots](#screenshots)
+- [Contribution](#contribution)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Live Demo
 
 🔗 [Click here to visit the live demo](https://pinsboard.netlify.app)
 
-<div align="left">
-  <img src="/screenshots/img4.png" width="400px"</img>
-  <img src="/screenshots/img3.png" width="400px"</img>
-  <img src="/screenshots/img2.png" width="400px"</img>
-  <img src="/screenshots/img1.png" width="400px"</img>
-</div>
+![Preview](/screenshots/img4.png)
 
 ## Tech Stack
 
@@ -99,6 +105,25 @@ npm run dev
 ```
 
 Visit [http://localhost:3333](http://localhost:3333) in your browser.
-```
 
-Feel free to adjust the formatting or content further based on your preferences and project needs.
+## Screenshots
+
+<div align="left">
+  <img src="/screenshots/img4.png" width="400px"</img>
+  <img src="/screenshots/img3.png" width="400px"</img>
+  <img src="/screenshots/img2.png" width="400px"</img>
+  <img src="/screenshots/img1.png" width="400px"</img>
+</div>
+
+## Contribution
+
+Contributions are welcome! If you want to contribute, please fork the repository and create a pull request. 
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Thanks to [Sanity.io](https://www.sanity.io) for providing the backend infrastructure.
+- Special thanks to the contributors of React, Tailwind CSS, and other open-source libraries used in this project.
