@@ -1,72 +1,104 @@
-# PIN BOARD: A Pinterest-like React Social Media App
+# 📌 PIN BOARD REACT-Web-App
 
-Pin Board is a full-stack, responsive social media web application inspired by Pinterest. It allows users to:
+Welcome to PIN BOARD, a full-stack responsive social media web application similar to Pinterest. PIN BOARD allows users to log in using Google, share and download images with associated links, and engage through comments.
 
-* Login using Google Authentication
-* Share and download images with links
-* Engage with other users through comments
+## Live Demo
 
-**Live Demo:** [Pin Board](https://pinsboard.netlify.app)
+🔗 [Click here to visit the live demo](https://pinsboard.netlify.app)
+
+<div align="left">
+  <img src="/screenshots/img4.png" width="400px"</img>
+  <img src="/screenshots/img3.png" width="400px"</img>
+  <img src="/screenshots/img2.png" width="400px"</img>
+  <img src="/screenshots/img1.png" width="400px"</img>
+</div>
 
 ## Tech Stack
 
-* Frontend: React
-* Styling: Tailwind CSS
-* Backend: Sanity.io
+- **Frontend**: React
+- **Styling**: Tailwind CSS
+- **Backend**: Sanity.io
 
 ## Local Development
 
-Follow these steps to set up and run Pin Board on your machine.
+### Frontend
 
 **Prerequisites:**
 
-* Git (https://git-scm.com/downloads)
-* Node.js (https://nodejs.org/en)
-* npm (Node Package Manager) - Usually comes bundled with Node.js installation
+Ensure you have the following installed on your machine:
 
-**Project Setup:**
+- Git
+- Node.js
+- npm
 
-1. Clone the repository:
+**Cloning the Repository:**
 
-   ```bash
-   git clone [invalid URL removed]
-   ```
+```bash
+git clone https://github.com/aanujkhurana/AI_ArticleSummary-React.git
+cd AI_ArticleSummary-React/
+```
 
-   Replace `your-username` with your actual GitHub username.
-2. Navigate to the project directory:
+**Set Up Environment Variables:**
 
-   ```bash
-   cd pin-board
-   ```
+Create a new file named `.env` in the frontend folder of the project and add the following content:
 
-**Frontend Setup:**
+```env
+VITE_GOOGLE_API_TOKEN = [Google-Auth-API-Key]
+VITE_SANITY_PROJECT_ID = [Sanity-Project-ID]
+VITE_SANITY_TOKEN = [Sanity-Token]
+VITE_SANITY_DATASET = [Sanity-Dataset]
+```
 
-1. **Environment Variables:**
+Replace the placeholder values with your actual credentials/API keys.
 
-   Create a file named `.env` in the `frontend` directory and add the following lines:
+**Running the Project:**
 
-   ```
-   VITE_GOOGLE_API_TOKEN=YOUR_GOOGLE_AUTH_API_KEY
-   VITE_SANITY_PROJECT_ID=YOUR_SANITY_PROJECT_ID
-   VITE_SANITY_TOKEN=YOUR_SANITY_MANAGEMENT_TOKEN
-   VITE_SANITY_DATASET=YOUR_SANITY_DATASET
-   ```
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-   * Replace placeholders with your actual credentials:
-      * Get a Google Auth API key from https://console.cloud.google.com/
-      * Create a Sanity project and find your project ID, dataset, and a management token at https://www.sanity.io/pricing
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-2. **Install Dependencies:**
+### Backend
 
-   ```bash
-   cd frontend
-   npm install
-   ```
+**Prerequisites:**
 
-3. **Run the Development Server:**
+Ensure you have the following installed on your machine:
 
-   ```bash
-   npm run dev
-   ```
+- Git
+- Node.js
+- npm
 
-   This will start the development server at http://localhost:5173. Open this URL in your browser to view the application.
+**Cloning the Repository:**
+
+```bash
+git clone https://github.com/aanujkhurana/AI_ArticleSummary-React.git
+cd AI_ArticleSummary-React/
+```
+
+**Set Up Environment Variables:**
+
+Create a new file named `.env` in the backend folder of the project and add the following content:
+
+```env
+SANITY_PROJECT_ID = [Sanity-Project-ID]
+SANITY_DATASET = [Sanity-Dataset]
+SANITY_TOKEN = [Sanity-Token]
+```
+
+Replace the placeholder values with your actual Sanity.io project credentials.
+
+**Running the Project:**
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Visit [http://localhost:3333](http://localhost:3333) in your browser.
+```
+
+Feel free to adjust the formatting or content further based on your preferences and project needs.
