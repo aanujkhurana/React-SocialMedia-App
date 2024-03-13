@@ -1,3 +1,4 @@
+[![Vite](https://img.shields.io/badge/Vite-4.X-yellow.svg)](https://vitejs.org/)
 [![React](https://img.shields.io/badge/React-17.0.2-blue.svg)](https://reactjs.org/)
 [![Sanity](https://img.shields.io/badge/Sanity-3.0.0-orange.svg)](https://www.sanity.io/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-2.2.19-blueviolet.svg)](https://tailwindcss.com/)
